@@ -1,0 +1,45 @@
+@import 'variables';
+
+mat-form-field {
+  font-size: $font-regular-small;
+}
+
+button {
+  width: 100%;
+  height: 3rem;
+  background: $green-dark;
+  color: $white;
+  font-family: OpenSans-SemiBold;
+}
+
+
+//mat-input focused color
+::ng-deep .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+  color: $green-dark !important;
+}
+
+::ng-deep .mat-focused .mat-form-field-label {
+  /*change color of label*/
+  color: $green-dark !important;
+}
+
+div {
+  text-align: center;
+  padding: 1rem 0 0;
+  font-size: $font-regular-small;
+
+  span {
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline
+    }
+  }
+}
+
+.error {
+  font-size: $font-regular-small;
+  padding: 10px 5px;
+  text-align: center;
+  color: red;
+}

@@ -1,0 +1,13 @@
+<div class="wrapper">
+  <div routerLink="moje-konto">
+    <mat-icon [ngClass]="{'active-link': router.url === '/panel/moje-konto'}">person</mat-icon>
+  </div>
+  <div routerLink="/panel">
+    <mat-icon [ngClass]="{'active-link': router.url === '/panel'}">home</mat-icon>
+  </div>
+  <div routerLinkActive="active-link" (click)="logout()">
+    <mat-icon>
+      logout
+    </mat-icon>
+  </div>
+</div>

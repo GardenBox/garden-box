@@ -1,0 +1,19 @@
+<div class="wrapper tile">
+  <div class="">
+    <h2>Informacje ogólne</h2>
+  </div>
+  <div class="info-content">
+    <h4>Nazwa rośliny <span class="material-icons" title="edytuj" (click)="editMode = true" *ngIf="!editMode">
+        mode_edit
+      </span></h4>
+    <p *ngIf="!editMode">{{plantname}}</p>
+    <input *ngIf="editMode" [formControl]="plantName" placeholder="{{plantname}}">
+    <h4>Nazwa urządzenia</h4>
+    <p>Raspberry Pi 4B</p>
+    <h4>Data</h4>
+    <p>{{date}} {{time}}</p>
+  </div>
+  <div class="logout">
+    <button mat-stroked-button *ngIf="editMode" class="btn-save" (click)="editPlant()">Zapisz</button>
+  </div>
+</div>

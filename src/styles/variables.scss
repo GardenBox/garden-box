@@ -1,0 +1,66 @@
+$font-bigger: 3rem;
+$font-big: 2rem;
+$font-larger: 1.5rem;
+$font-large: 1.25rem;
+$font-regular: 1rem;
+$font-regular-small: 0.85rem;
+$font-small: 0.75rem;
+
+$green-light: #8de2af;
+$green-dark: #38AA73;
+$green-background-light: #d5f1e4;
+$white: white;
+$grey-light: #cecdcd;
+
+@mixin media($breakpoint) {
+
+  @if $breakpoint==phone-land {
+    @media only screen and (min-width: 576px) {
+      @content
+    }
+
+    ;
+  }
+
+
+  @if $breakpoint==tab-port {
+    @media only screen and (min-width: 767px) {
+      @content
+    }
+
+    ;
+  }
+
+  @if $breakpoint==tab-land {
+    @media only screen and (min-width: 992px) {
+      @content
+    }
+
+    ;
+  }
+
+  @if $breakpoint==desktop {
+    @media only screen and (min-width: 1200px) {
+      @content
+    }
+
+    ;
+  }
+
+  @if $breakpoint==large {
+    @media only screen and (min-width: 1400px) {
+      @content
+    }
+
+    ;
+  }
+
+  @if $breakpoint==extra-large {
+    @media only screen and (min-width: 1600px) {
+      @content
+    }
+
+    ;
+  }
+
+}

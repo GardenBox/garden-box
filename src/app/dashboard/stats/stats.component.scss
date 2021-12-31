@@ -1,0 +1,67 @@
+@import 'variables';
+
+h2 {
+  font-family: Montserrat-Bold;
+}
+
+.date-picker {
+  margin: 30px 15px 0;
+  width: 200px;
+}
+
+.wrapper {
+  width: 100%;
+
+  @include media(tab-port) {
+    display: inline-flex;
+  }
+}
+
+.calendar-wrapper {
+  padding: 15px;
+
+  @include media(tab-port) {
+    width: 30%;
+  }
+
+  @include media(tab-land) {
+    width: 35%;
+  }
+
+  .tile {
+    box-shadow: none;
+
+    @include media(tab-port) {
+      box-shadow: 0px 0px 18px 1px #e7e7e7;
+    }
+  }
+}
+
+.calendar {
+  min-height: 400px;
+}
+
+.table-wrapper {
+  @include media(tab-port) {
+    width: 70%;
+  }
+
+  @include media(tab-land) {
+    width: 65%;
+  }
+}
+
+.container {
+  max-width: 1000px;
+  padding: 0 0 4rem
+}
+
+::ng-deep .mat-calendar-body-cell-content.mat-focus-indicator.mat-calendar-body-selected {
+  background-color: #d5f1e4 !important;
+  color: $green-dark !important;
+  border-color: $green-dark !important;
+}
+
+::ng-deep .mat-calendar-body-cell-content.mat-focus-indicator:hover {
+  background-color: none !important;
+}

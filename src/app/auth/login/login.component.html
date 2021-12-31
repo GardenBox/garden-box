@@ -1,0 +1,30 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <mat-form-field appearance="outline">
+    <mat-label>E-mail</mat-label>
+    <input matInput type="text" formControlName="email">
+    <mat-error *ngIf="email.hasError('required')">
+      Podaj adres e-mail
+    </mat-error>
+    <mat-error *ngIf="email.hasError('email')">
+      Podaj prawidłowy adres e-mail
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Hasło</mat-label>
+    <input matInput type="password" formControlName="password">
+    <mat-error *ngIf="password.hasError('required')">
+      Podaj hasło
+    </mat-error>
+    <mat-error *ngIf="password.hasError('invalid')">
+      Podaj hasło
+    </mat-error>
+  </mat-form-field>
+  <button mat-button>Zaloguj się</button>
+
+</form>
+<div>
+  <span routerLink="/rejestracja">Rejestracja</span>
+</div>
+<p *ngIf="errorMessage" class="message error">{{errorMessage}}</p>
+<p *ngIf="registrationInfo$ | async" class="message success">Rejestracja przebiegła pomyślnie.</p>

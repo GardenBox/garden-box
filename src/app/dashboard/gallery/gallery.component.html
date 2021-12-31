@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="wrapper tile">
+    <h2>Galeria </h2>
+    <form encType="multipart/form-data">
+      <input type="file" accept="image/*" class="input-file" (change)="onSelectFile($event)" #fileUpload>
+      <div class="file-wrapper">
+        <button (click)="fileUpload.click()" mat-button class="file-button" type="button">
+          Dołącz plik
+        </button>
+      </div>
+      <div class="file-name">
+
+        {{filename || ""}}
+      </div>
+    </form>
+
+    <div class="images">
+      <div class="image-wrapper" *ngFor="let image of images">
+        <img src="../../../assets/images/{{image.name}}">
+        <p class="text-center">{{image.name}}</p>
+        <p class="text-center">{{image.createdAt}}</p>
+        <mat-icon class="delete" (click)="removeImage(image)">delete</mat-icon>
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+@import 'variables';
+
+.parameters-wrapper {
+
+  @include media(tab-port) {
+    display: flex;
+  }
+
+  margin: .5rem;
+}
+
+
+.parameter-title {
+
+  @include media(tab-port) {
+    margin: 0 10px 0 0;
+    font-size: $font-regular-small;
+  }
+
+  padding: 10px;
+  margin: 2px;
+  color: $grey-light;
+  font-family: OpenSans-Regular;
+  font-size: $font-small;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.selected {
+  background-color: #d5f1e4;
+  color: $green-dark;
+  font-family: OpenSans-SemiBold;
+}

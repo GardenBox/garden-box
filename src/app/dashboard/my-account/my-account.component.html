@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="wrapper tile">
+    <div class="">
+      <h2>Moje konto</h2>
+    </div>
+    <div class="">
+      <h4>Adres e-mail</h4>
+      <p>{{email}}</p>
+    </div>
+    <div class="">
+      <h4>Zmień hasło
+        <span class="material-icons" title="edytuj" (click)="editMode = true" *ngIf="!editMode">
+          mode_edit
+        </span>
+      </h4>
+    </div>
+    <input *ngIf="editMode" [formControl]="newPassword" placeholder="Nowe hasło" type="password">
+    <p class="error" *ngIf="newPassword.hasError('minlength')">Wpisz co najmniej 6 znaków.</p>
+    <div class="logout">
+      <button mat-stroked-button *ngIf="!editMode" class="btn-warn" color="warn" (click)="logout()">Wyloguj się</button>
+      <button mat-stroked-button *ngIf="editMode" class="btn-save" (click)="save()"
+        [disabled]="newPassword.hasError('minlength') == true || newPassword.value === ''">Zapisz</button>
+    </div>
+  </div>
+</div>

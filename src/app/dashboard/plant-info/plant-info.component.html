@@ -1,0 +1,15 @@
+<div class="wrapper tile">
+  <h2>Wzrost rośliny [%]</h2>
+
+  <div class="chart-wrapper">
+    <ng-container *ngIf="currentValue !=null; else spinner">
+      <mwl-gauge [min]="1" [max]="100" [dialStartAngle]="-90" [dialEndAngle]="-90.001" [value]="this.currentValue"
+        [animated]="true" [animationDuration]="1" [valueClass]="'test'" *ngIf="currentValue">
+      </mwl-gauge>
+    </ng-container>
+    <ng-template #spinner>
+      <mat-spinner></mat-spinner>
+    </ng-template>
+  </div>
+
+</div>

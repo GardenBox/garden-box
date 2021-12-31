@@ -1,0 +1,79 @@
+@import 'variables';
+
+:host {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+}
+
+.container {
+  max-width: 840px;
+
+  .wrapper {
+    padding: 15px;
+    padding: 15px;
+    cursor: auto;
+
+    @include media(tab-land) {
+      margin: 15px;
+    }
+
+    h2 {
+      font-family: Montserrat-Bold;
+      padding: .5rem 0;
+    }
+
+    h4 {
+      color: $grey-light;
+      font-family: OpenSans-Regular;
+      padding: 1rem 0 .5rem;
+    }
+
+    p {
+      font-size: $font-regular-small;
+      color: grey;
+    }
+
+    input {
+      border: rgb(214, 214, 214) 1px solid;
+      margin: 2px;
+      border-radius: 5px;
+      padding: 8px;
+      font-size: $font-regular-small;
+      color: gray;
+    }
+
+    .error {
+      font-size: $font-small;
+      color: red;
+    }
+
+    .logout {
+      text-align: right;
+    }
+  }
+}
+
+.tile {
+  @include media(tab-land) {
+    padding: 15px;
+    box-shadow: 0px 0px 18px 1px #e7e7e7;
+  }
+
+  box-shadow: none;
+}
+
+.material-icons {
+  padding: 0 4px;
+  font-size: $font-regular;
+  color: gray;
+  cursor: pointer
+}
+
+.btn-save {
+  background: $green-dark;
+  color: white !important
+}
+
+.btn-warn {
+  background-color: #f1d5d5;
+  color: #aa3838;
+}

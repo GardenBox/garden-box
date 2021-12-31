@@ -1,0 +1,4 @@
+<div class="parameters-wrapper">
+  <div class="parameter-title" [class.selected]="title === selectedParameter.title"
+    *ngFor="let title of parametersTitle" (click)="selectTitle(title)"> {{title}}</div>
+</div>

@@ -1,0 +1,9 @@
+<div class="wrapper tile">
+  <h2>{{selectedParameter?.title}}
+  </h2>
+  <app-parameter-title (selectedParam)="onSelectedParam($event)"></app-parameter-title>
+  <google-chart *ngIf="dataChart.length" #googleChart [data]="dataChart" [type]="chartType.AreaChart"
+    style="width: 100%; min-height: 250px; position: relative;" [options]="chartOptions" [dynamicResize]="true">
+  </google-chart>
+  <app-empty-data *ngIf="!dataChart.length"></app-empty-data>
+</div>

@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="wrapper">
+    <div class="calendar-wrapper">
+      <mat-calendar class="calendar tile" [selected]="selectedDate" [maxDate]="currentDate"
+        (selectedChange)="onSelectedChange($event)">
+      </mat-calendar>
+    </div>
+    <div class="table-wrapper">
+      <app-main-table></app-main-table>
+    </div>
+  </div>
+  <app-main-chart></app-main-chart>
+</div>

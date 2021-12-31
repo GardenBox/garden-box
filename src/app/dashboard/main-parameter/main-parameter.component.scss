@@ -1,0 +1,76 @@
+@import 'variables';
+
+.parameter {
+
+  // min-width: 170px;
+  // max-width: 170px;
+  min-width: 148px;
+  height: 100%;
+  // width: 100%;
+  // margin: 15px;
+
+  // @include media(large) {
+  //   width: 150px;
+  // }
+
+  @include media(extra-large) {
+    // width: 180px;
+    width: 100%;
+    // margin: 15px 15px 15px 15px;
+  }
+
+  .header {
+    display: flex;
+
+    align-items: center;
+    padding: 1rem .75rem .75rem;
+
+    h2 {
+      font-family: Montserrat-Bold;
+      font-size: $font-regular-small;
+      padding: 0 0 0 .25rem;
+    }
+  }
+
+}
+
+.tile {
+  cursor: pointer;
+}
+
+.measurement {
+
+  // height: 70px;
+  padding: .75rem 1rem 2rem;
+
+  @include media(large) {
+    padding: .75rem 1rem 0rem;
+    height: 70px;
+  }
+
+  .value {
+    font-size: $font-big;
+    font-family: Montserrat-Bold;
+
+    @include media(large) {
+      font-size: $font-bigger;
+    }
+  }
+
+  .unit {
+    font-size: $font-small;
+    font-family: Montserrat-Bold;
+  }
+}
+
+.manage {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 2rem 1rem;
+  font-size: $font-small;
+  font-family: OpenSans-SemiBold;
+}
+
+mat-icon {
+  font-size: 30px;
+}

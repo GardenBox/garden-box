@@ -1,0 +1,26 @@
+@import 'variables';
+
+.table {
+  width: 100%;
+
+  table {
+    width: 100%;
+
+    th {
+      padding: 8px 8px 12px;
+      font-family: Montserrat-Medium;
+      font-size: $font-regular-small;
+    }
+
+    tr {
+      td {
+        width: 50%;
+        text-align: center;
+        padding: 5px;
+        font-size: $font-small;
+        color: #a3a2a2;
+      }
+    }
+
+  }
+}

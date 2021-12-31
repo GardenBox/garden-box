@@ -1,0 +1,7 @@
+<div class="wrapper tile">
+  <h2>Pomiary</h2>
+  <app-parameter-title (selectedParam)="onSelectedParam($event)"></app-parameter-title>
+  <app-table [tableHeaderOne]="'Godzina'" [tableHeaderTwo]="selectedParameter?.title" [tableData]="data"
+    [unit]="selectedParameter.unit"></app-table>
+  <app-empty-data *ngIf="!data.length"></app-empty-data>
+</div>

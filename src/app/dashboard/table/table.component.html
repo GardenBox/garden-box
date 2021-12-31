@@ -1,0 +1,15 @@
+<div class="table">
+  <table>
+    <tr>
+      <th>{{tableHeaderOne}}</th>
+      <th>{{tableHeaderTwo}} [{{unit}}]</th>
+    </tr>
+    <ng-container *ngFor="let measure of tableData">
+      <tr>
+        <td>{{measure.createdAt | date:'HH:mm'}}</td>
+        <td>{{measure.value}}</td>
+      </tr>
+    </ng-container>
+
+  </table>
+</div>

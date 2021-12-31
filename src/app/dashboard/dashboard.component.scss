@@ -1,0 +1,111 @@
+@import 'variables';
+
+.tiles-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  padding: 0 0 50px 0;
+
+  div {
+    padding: 15px;
+    margin: auto;
+  }
+}
+
+.container {
+  justify-content: center;
+  background: rgb(255, 255, 255);
+  margin-bottom: 50px;
+}
+
+// dashboard fullwidth
+
+.side {
+  position: fixed;
+  height: 100%;
+}
+
+.content {
+  padding: 2rem 1rem;
+  margin-left: 250px;
+
+  @include media(desktop) {
+    padding: 3rem 4rem;
+  }
+
+  @include media(large) {
+    margin-left: 300px;
+  }
+
+}
+
+.top-dashboard {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  @include media(large) {
+    flex-direction: row;
+  }
+}
+
+.chart-wrapper {
+
+  @include media(large) {
+    width: 60%;
+  }
+}
+
+.parameters-wrapper {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+
+  @include media(large) {
+    width: 40%;
+  }
+
+  .param {
+    margin: 15px;
+    width: calc(25% - 30px);
+
+    @include media(large) {
+      width: calc(50% - 30px);
+    }
+  }
+}
+
+.bottom-dashboard {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+
+  @include media(large) {
+    flex-direction: row;
+  }
+}
+
+.device-wrapper {
+  width: 50%;
+
+  @include media(large) {
+    width: 30%;
+  }
+}
+
+.info-wrapper {
+  width: 50%;
+  cursor: pointer;
+
+  @include media(large) {
+    width: 20%;
+  }
+}
+
+.table-wrapper {
+  width: 100%;
+
+  @include media(large) {
+    width: 50%;
+  }
+}

@@ -1,0 +1,37 @@
+@import 'variables';
+
+.stripe {
+  display: flex;
+  align-items: center;
+  margin: .2rem .5rem;
+  border-radius: 5px;
+  // background-color: green;
+  padding: .75rem 1.75rem;
+  color: rgb(138, 138, 138);
+  font-size: $font-regular;
+  font-family: OpenSans-SemiBold;
+
+
+  &:hover {
+    // border: 1px solid $green-dark;
+
+    background-color: #d5f1e4;
+    cursor: pointer;
+    transition: background-color .2s ease-in-out;
+    color: $green-dark
+  }
+
+
+  .title {
+    padding: 0 1.25rem;
+  }
+}
+
+.selected {
+  // border: 1px solid $green-dark;
+
+  background-color: #d5f1e4;
+  cursor: pointer;
+  transition: background-color .2s ease-in-out;
+  color: $green-dark !important
+}

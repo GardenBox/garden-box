@@ -1,0 +1,20 @@
+<div class="tile parameter" [ngStyle]="{'background-color': parameter.backgroundColor, 'color': parameter.color}">
+  <div class="header">
+    <!-- <mat-icon>{{parameter.iconName}}</mat-icon> -->
+    <h2>{{parameter.title}}</h2>
+  </div>
+  <div class="measurement">
+    <ng-container *ngIf="value; else spinner">
+      <span class="value">
+        {{value }}
+      </span>
+      <span class="unit">
+        {{parameter.unit}}
+      </span>
+    </ng-container>
+    <ng-template #spinner>
+      <mat-spinner [diameter]="60"></mat-spinner>
+    </ng-template>
+  </div>
+  <div class="manage">Zarządzaj</div>
+</div>

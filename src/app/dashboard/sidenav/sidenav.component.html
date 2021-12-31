@@ -1,0 +1,31 @@
+<div class="cont">
+  <div class="img-wrapper">
+    <img src="../../../assets/img/logo.png">
+  </div>
+  <div class="menu">
+    <div class="stripe" routerLink="/panel" routerLinkActive="selected" [routerLinkActiveOptions]="{exact:
+      true}">
+      <mat-icon>{{menuItems[0].iconName}}</mat-icon>
+      <p class="title">{{menuItems[0].title}}</p>
+    </div>
+
+    <div class="category">Parametry</div>
+    <ng-container *ngFor="let item of parameters">
+      <div class="stripe" [routerLink]="['/panel/',item.link]" [class.selected]="item.title == selectedItem"
+        (click)="selectItem(item.title)" routerLinkActive="selected" [routerLinkActiveOptions]="{exact:
+          true}">
+        <mat-icon>{{item.iconName}}</mat-icon>
+        <p class="title">{{item.title}}</p>
+      </div>
+    </ng-container>
+
+    <div class="category">Inne</div>
+    <ng-container *ngFor="let item of others">
+      <div class="stripe" [routerLink]="['/panel/',item.link]" routerLinkActive="selected" [routerLinkActiveOptions]="{exact:
+        true}">
+        <mat-icon>{{item.iconName}}</mat-icon>
+        <p class="title">{{item.title}}</p>
+      </div>
+    </ng-container>
+  </div>
+</div>

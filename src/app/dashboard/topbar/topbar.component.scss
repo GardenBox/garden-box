@@ -1,0 +1,20 @@
+@import 'variables';
+
+:host div {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // background: rgb(249, 255, 249);
+
+  h4 {
+    font-family: Montserrat-Medium;
+    font-size: $font-regular;
+    // color: rgb(165, 165, 165);
+  }
+
+  img {
+    position: absolute;
+    left: 10px;
+  }
+}

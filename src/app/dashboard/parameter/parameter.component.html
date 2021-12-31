@@ -1,0 +1,64 @@
+<div class="container">
+  <div class="wrapper">
+    <div class="tile">
+      <div class="icon-wrapper">
+        <mat-icon [inline]="true" *ngIf="parameter">{{parameter.iconName}}</mat-icon>
+      </div>
+
+      <p class="text-center">Aktualna wartość</p>
+      <div class="current-value text-center" *ngIf="currentMeasurementValue !=null; else spinner">
+        {{currentMeasurementValue}}
+        <span>{{parameter.unit}}</span>
+      </div>
+      <ng-template #spinner>
+        <mat-spinner [diameter]="60"></mat-spinner>
+      </ng-template>
+
+      <ng-container *ngIf="parameter.title != 'Powietrze'">
+        <div class="control">
+          <div>
+            Tryb ręczny
+          </div>
+          <div>
+            <mat-slide-toggle [(ngModel)]="mode" (click)="setMode()">
+              {{mode ? 'Wł.' : 'Wył.'}}
+            </mat-slide-toggle>
+          </div>
+        </div>
+        <ng-container>
+          <div class="control">
+            <div>Zadana wartość</div>
+            <div *ngIf="sliderLoaded">{{slider.value}} {{parameter?.unit}}</div>
+          </div>
+          <div class="slider-wrapper">
+            <mat-slider min="{{parameter.minSliderValue}}" max="{{parameter.maxSliderValue}}" step=".5"
+              autoTicks="false" [displayWith]="formatLabel" [disabled]="!mode" (change)="updateValue($event)" #slider
+              [value]="sliderValue">
+            </mat-slider>
+          </div>
+        </ng-container>
+
+      </ng-container>
+
+    </div>
+
+    <div class="tile">
+      <app-table *ngIf="data" [tableHeaderOne]="'Godzina'" [tableHeaderTwo]="parameter.title" [tableData]="data"
+        [unit]="parameter.unit">
+      </app-table>
+      <div class="spinner" *ngIf="data.length === 0">
+        <div class="inside">
+          <mat-spinner></mat-spinner>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <ng-container *ngIf="dataChart.length">
+    <div class="chart-wrapper tile">
+      <google-chart #google [data]="dataChart" [type]="chartType.AreaChart" style="width: 100%; min-height: 300px"
+        [dynamicResize]="true" [options]="chartOptions">
+      </google-chart>
+    </div>
+  </ng-container>
+</div>
