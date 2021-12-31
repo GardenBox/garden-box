@@ -53,22 +53,7 @@ export class MainChartComponent implements OnInit {
   getDateMeasurement(): void {
     this.measurementsService.dateSubject$.subscribe((choosenDate: string) => {
       this.measurementsService.getDateMeasurement(this.selectedParameter.name as string, choosenDate).subscribe(data => {
-        let data2 = [
-          {value: 60, createdAt: '2021-12-02 00:00:00'},
-          {value: 65, createdAt: '2021-12-02 02:00:00'},
-          {value: 64, createdAt: '2021-12-02 04:00:00'},
-          {value: 63, createdAt: '2021-12-02 06:00:00'},
-          {value: 62, createdAt: '2021-12-02 08:00:00'},
-          {value: 61, createdAt: '2021-12-02 10:00:00'},
-          {value: 70, createdAt: '2021-12-02 12:00:00'},
-          {value: 69, createdAt: '2021-12-02 14:00:00'},
-          {value: 64, createdAt: '2021-12-02 16:00:00'},
-          {value: 67, createdAt: '2021-12-02 18:00:00'},
-          {value: 66, createdAt: '2021-12-02 20:00:00'},
-          {value: 74, createdAt: '2021-12-02 22:00:00'},
-
-        ]
-        this.dataChart = this.chartService.createDataForChart(data2);
+        this.dataChart = this.chartService.createDataForChart(data);
       });
     })
   }
