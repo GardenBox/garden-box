@@ -44,7 +44,6 @@ exports.getImages = async (req, res) => {
         email
       }
     });
-    console.log(user)
 
     return res.status(200).json({
       message: 'OK',
@@ -59,7 +58,6 @@ exports.getImages = async (req, res) => {
 }
 
 exports.uploadImage = async (req, res) => {
-  console.log(req.files)
   const token = req.headers.authorization.replace('Bearer ', '');
   const decoded = jwt.decode(token);
   const email = decoded.email;
@@ -81,8 +79,7 @@ exports.uploadImage = async (req, res) => {
         createdAt: moment().format("YYYY-MM-DD HH:mm:ss")
       })
       let arr = user.images;
-      console.log('show user.images', user.images);
-      console.log('arr', arr)
+
       await user.update({
         images: arr
       }, {

@@ -38,7 +38,6 @@ exports.registration = async (req, res) => {
       }
     })
 
-    console.log('user1', user1);
     if (user1) res.status(400).json({
       message: 'Użytkownik o takim adresie już istnieje.'
     })
@@ -66,7 +65,7 @@ createUserToken = async (user, res) => {
   const token = jwt.sign(payload, SECRET_KEY, {
     expiresIn: '60'
   });
-  console.log('prepare')
+
   res.status(200).json({
     token: token,
     email: user.email

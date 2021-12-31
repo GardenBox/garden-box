@@ -23,7 +23,6 @@ export class GalleryComponent implements OnInit {
 
   getImages() {
     this.imageService.getImages().subscribe((data: any) => {
-      console.log(data)
       this.images = data.images
     })
   }

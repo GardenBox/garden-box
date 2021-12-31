@@ -21,7 +21,6 @@ export class AuthService {
     return this.http.post<User>(`${API_URL}/login`, {email, password})
     .pipe(
       tap((data: User) => {
-      console.log(data)
       this.user = data.email
     }
     ));

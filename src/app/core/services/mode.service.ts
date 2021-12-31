@@ -12,7 +12,6 @@ export class ModeService {
   constructor() { }
 
   getMode(paramName: string): boolean {
-    console.log(paramName)
     switch (paramName) {
       case ('temperature'):
         return this.modeTemperature;
@@ -26,7 +25,6 @@ export class ModeService {
   }
 
   setMode(paramName: string, value: boolean): void {
-    console.log(paramName)
     switch (paramName) {
       case ('temperature'):
         this.modeTemperature = value;

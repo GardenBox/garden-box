@@ -52,7 +52,6 @@ export class ParameterComponent implements OnInit, OnDestroy, OnChanges {
   }
 
   ngOnInit(): void {
-    console.log('herre')
     this.getLink();
     this.getParameter();
     this.subscription.add(this.socketService.listenParameter(this.parameter.name)
@@ -61,11 +60,9 @@ export class ParameterComponent implements OnInit, OnDestroy, OnChanges {
         filter((data: Measurement) => data.name === this.parameter.name)
       ).subscribe((data: Measurement) => {
         this.currentMeasurementValue = data.value;
-        // console.log(data)
       }));
     this.socketService.emitValue(this.parameter.name,this.slider.value);
     this.sliderValue = this.sliderService.getSliderValue(this.parameter.name);
-    console.log(this.sliderValue)
     this.updateValue(this.slider);
     this.mode = this.modeService.getMode(this.parameter.name);
     setTimeout(() => {
@@ -121,7 +118,6 @@ export class ParameterComponent implements OnInit, OnDestroy, OnChanges {
   }
 
   setMode() {
-    console.log(!this.mode)
     this.modeService.setMode(this.parameter.name, !this.mode);
   }
 

@@ -12,7 +12,6 @@ export class SliderService {
   constructor() { }
 
   getSliderValue(paramName: string): any  {
-    console.log(paramName)
     switch (paramName) {
       case ('temperature'):
         return this.sliderTemperature;
@@ -24,7 +23,6 @@ export class SliderService {
   }
 
   setSliderValue(paramName: string, value: number): void {
-    console.log(paramName)
     switch (paramName) {
       case ('temperature'):
         this.sliderTemperature = value;

@@ -7,7 +7,6 @@ exports.socketAir = function (socket) {
       if (err) {
         return console.log(err);
       }
-      console.log(data);
       airValue = data;
     });
 

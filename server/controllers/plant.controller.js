@@ -41,7 +41,6 @@ exports.getPlant = async (req, res) => {
         id: 1
       }
     });
-    console.log('plant to: ', plant);
 
     return res.status(200).json({
       message: 'OK',

@@ -22,7 +22,6 @@ export class TopbarComponent implements OnInit {
       filter((event: any) => event instanceof NavigationEnd)
     )
     .subscribe((data) => {
-      console.log(data)
       this.header = this.extractChildUrl(data.url)
     })
   }

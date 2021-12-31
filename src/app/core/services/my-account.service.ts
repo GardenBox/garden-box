@@ -18,7 +18,6 @@ export class MyAccountService {
   }
 
   editPassword(email:string, newPassword: string): Observable<any>{
-    console.log(newPassword);
     return this.http.patch<User>(`${API_URL}/user`, {email, newPassword})
   }
 }

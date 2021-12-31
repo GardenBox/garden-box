@@ -14,18 +14,16 @@ export class SocketService {
   constructor(private socket: Socket) {}
 
   private getSocketDataObservable(): Observable<any> {
-    return new Observable(observer => {
+    return new Observable((observer:any) => {
         this.observer = observer;
     });
   }
 
   emitInitialValue(paramName: string, value: number): void {
-    console.log(paramName, value)
     this.socket.emit('set'+paramName, value);
   }
 
   emitValue(paramName: string, value: any): void {
-    console.log(paramName)
     this.emitValueInterval = window.setInterval(()=> {
       this.socket.emit(paramName);
     }, 1000);

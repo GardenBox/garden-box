@@ -13,7 +13,6 @@ export class BottomBarComponent {
 
 
   isActiveLink(exact: boolean) {
-    console.log(this.router.url)
     return this.router.isActive('panel/', exact);
   }
 

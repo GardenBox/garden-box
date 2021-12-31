@@ -4,7 +4,6 @@ const fs = require('fs');
 const path = require('path');
 exports.uploadImage = async (req, res) => {
   const createdAt = req.body.createdAt;
-  console.log(createdAt);
   try {
     if (!req.files) {
       res.status(400).send({
@@ -12,7 +11,6 @@ exports.uploadImage = async (req, res) => {
       });
     } else {
       let img = req.files.image;
-      console.log(img);
       img.mv('./../src/assets/images/' + img.name);
 
       const plant = await Plant.findOne({
@@ -78,7 +76,6 @@ exports.getImages = async (req, res) => {
 
 exports.removeImage = async (req, res) => {
   const name = req.params.name;
-  console.log(req.params);
 
   try {
     let plant = await Plant.findOne({
@@ -102,10 +99,8 @@ exports.removeImage = async (req, res) => {
 
     await plant.save();
     let filepath = path.join(__dirname + `/../../src/assets/images/`);
-    console.log(`${filepath}${name}`);
     fs.unlink(`${filepath}${name}`, (err) => {
       if (err) throw err;
-      console.log('File was deleted');
     });
 
     res.status(201).json({

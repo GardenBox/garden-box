@@ -39,15 +39,12 @@ export class RegistrationComponent {
     const {email, password} = this.form.value;
 
     if (this.form.valid) {
-      console.log(this.form.value)
       this.authService.registration(email, password).subscribe(
         () => {
           this.authService.registrationInfo$.next(true);
           this.router.navigateByUrl('/zaloguj');
         }),
         (err: any) => {
-        console.log('here2')
-        console.log(err)
         this.errorMessage = err.error.message;
       };
     }

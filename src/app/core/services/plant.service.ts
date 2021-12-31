@@ -13,7 +13,6 @@ export class PlantService {
   constructor(private http: HttpClient) { }
 
   editPlant(name: string): Observable<any> {
-    console.log('here')
     return this.http.patch(`${API_URL}/plant`, {name});
   }
 

@@ -38,7 +38,6 @@ export class MainInfoComponent implements OnInit {
     this.editMode = false;
     this.plantService.editPlant(this.plantName.value).subscribe((data:any) => {
       this.getPlant();
-      console.log(data)
     })
   }
 
