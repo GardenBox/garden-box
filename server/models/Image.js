@@ -6,18 +6,15 @@ const sequelize = require('../database');
 const uuid = require('uuid').v4;
 const Plant = require('./Plant');
 
-class User extends Model {}
+class Image extends Model {}
 
-User.init({
+Image.init({
   id: {
     type: DataTypes.UUID,
     unique: true,
     primaryKey: true,
   },
-  email: {
-    type: DataTypes.STRING
-  },
-  password: {
+  name: {
     type: DataTypes.STRING
   },
   images: {
@@ -27,15 +24,14 @@ User.init({
   sequelize,
   modelName: 'user',
   updatedAt: false,
-  createdAt: false
 })
 
-User.beforeCreate(user => user.id = uuid());
-User.belongsTo(Plant, {
+Image.beforeCreate(user => user.id = uuid());
+Image.belongsTo(Plant, {
   foreignKey: 'id'
 });
 
-Plant.hasMany(User, {
+Plant.hasMany(Image, {
   foreignKey: 'id'
 });
-module.exports = User;
+module.exports = Image;

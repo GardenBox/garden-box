@@ -4,7 +4,6 @@ const air = require('./parameters/air');
 const humidity = require('./parameters/humidity');
 const light = require('./parameters/light');
 const temperature = require('./parameters/temperature');
-const container = require('./parameters/container');
 const parameter = require('./controllers/parameter.controller')
 const sequelize = require('./database');
 const router = require('./routes');
@@ -69,5 +68,4 @@ io.on("connection", socket => {
   temperature.socketTemperature(socket);
   air.socketAir(socket);
   light.socketLight(socket);
-  container.socketContainer(socket);
 });

@@ -1,4 +1,5 @@
 let lightValue;
+const fs = require('fs');
 
 exports.socketLight = function (socket) {
 

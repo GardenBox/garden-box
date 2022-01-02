@@ -1,4 +1,5 @@
 let tempValue;
+const fs = require('fs');
 
 exports.socketTemperature = function (socket) {
   socket.on('temperature', () => {

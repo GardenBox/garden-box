@@ -2,6 +2,7 @@ const Plant = require('../models/Plant');
 const moment = require('moment');
 const fs = require('fs');
 const path = require('path');
+
 exports.uploadImage = async (req, res) => {
   const createdAt = req.body.createdAt;
   try {

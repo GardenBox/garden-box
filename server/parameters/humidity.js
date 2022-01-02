@@ -1,4 +1,5 @@
 let humidityValue = 65;
+const fs = require('fs');
 
 exports.socketHumidity = function (socket) {
   socket.on('humidity', (value) => {

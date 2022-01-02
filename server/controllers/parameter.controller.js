@@ -6,6 +6,8 @@ const {
 } = require("sequelize");
 const url = require('url');
 const moment = require('moment');
+const fs = require('fs');
+
 exports.getParameter = async (req, res) => {
   const param = req.params.parameter;
   const limit = req.params.limit;

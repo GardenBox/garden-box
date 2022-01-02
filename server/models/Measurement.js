@@ -37,6 +37,12 @@ Measurement.init({
 })
 
 Measurement.beforeCreate(plant => plant.id = uuid());
-Measurement.belongsTo(Plant);
+Measurement.belongsTo(Plant, {
+  foreignKey: 'id'
+});
+
+Plant.hasMany(Measurement, {
+  foreignKey: 'id'
+});
 
 module.exports = Measurement;
